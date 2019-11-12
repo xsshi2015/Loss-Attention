@@ -154,7 +154,7 @@ def train():
             loss_1 = weight_criterion(out_f, targets.repeat(4*4,1).permute(1,0).contiguous().view(-1), weights=alpha_f)
             loss_2 = F.mse_loss(alpha_f, z_comp.view(-1), size_average=True)
 
-            loss = loss_0 + u_w*loss_1 + u_w_m*loss_2
+            loss = loss_0 + loss_1 + u_w_m*loss_2
 
             loss.backward()
             optimizer.step()
