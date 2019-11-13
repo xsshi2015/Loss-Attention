@@ -128,7 +128,7 @@ def train():
         else:
             u_w = rampup_value        
 
-        u_w_m = u_w*400              # u_w_m = u_w*300 for 1000 training images, u_w_m = u_w*500 for 5000 training images are better
+        u_w_m = u_w*400              # u_w_m = u_w*300 for 1000 training images, u_w_m = u_w*500 for 5000 training images might be better
 
         u_w = torch.autograd.Variable(torch.FloatTensor([u_w]).cuda(), requires_grad=False)
         u_w_m = torch.autograd.Variable(torch.FloatTensor([u_w_m]).cuda(), requires_grad=False)
